@@ -13,6 +13,10 @@ inputs:
     description: "Base URL path"
     required: false
     default: ${{ github.repository }}
+  owner:
+    description: "Repository owner"
+    required: false
+    default: ${{ github.repository_owner }}
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -20,4 +24,4 @@ runs:
     TITLE: ${{ inputs.title }}
     DESCRIPTION: ${{ inputs.description }}
     BASE_PATH: ${{ inputs.base_path }}
-    OWNER: ${{ github.repository_owner }}
+    OWNER: ${{ inputs.repository_owner }}
