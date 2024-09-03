@@ -5,14 +5,28 @@ inputs:
     description: "Title of your changelog"
     required: false
     default: "Changelog"
+  description:
+    description: "Title of your changelog"
+    required: false
+    default: "Blazing fast micro blogging"
 runs:
   using: "composite"
   steps:
-    - name: Set Greeting
-      run: echo "Hello $INPUT_TITLE" > hello.txt
-      shell: bash
-      env:
-        INPUT_TITLE: ${{ inputs.title }}
-    - uses: actions/upload-artifact@v4
+    - uses: oven-sh/setup-bun@v2
+    - uses: actions/configure-pages@v5
       with:
-        path: hello.txt
+        static_site_generator: next
+    - uses: actions/cache@v4
+      with:
+        path: |
+          .next/cache
+        key: ${{ runner.os }}-next-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+        restore-keys: |
+          ${{ runner.os }}-next-${{ hashFiles('**/bun.lockb') }}-
+    - run: bun install
+      shell: bash
+    - run: bun run build
+      shell: bash
+    - uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./out
