@@ -1,9 +1,20 @@
 on: push
 
 jobs:
-  changelog:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: ./
-      - run: ls -la
+        with:
+          title: Changelog
+          description: Blazing fast micro blogging
+
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

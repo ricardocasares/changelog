@@ -6,7 +6,7 @@ inputs:
     required: false
     default: "Changelog"
   description:
-    description: "Title of your changelog"
+    description: "Description for your changelog"
     required: false
     default: "Blazing fast micro blogging"
 runs:
