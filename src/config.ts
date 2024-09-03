@@ -1,2 +1,2 @@
-export const title = process.env.INPUT_TITLE as string;
-export const description = process.env.INPUT_DESCRIPTION as string;
+export const title = process.env.TITLE as string;
+export const description = process.env.DESCRIPTION as string;

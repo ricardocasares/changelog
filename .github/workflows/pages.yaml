@@ -9,11 +9,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: ./
         with:
           title: Changelog
           description: Blazing fast micro blogging
+      - uses: actions/upload-artifact@v4
+        with:
+          name: workspace_artifacts
+          path: ${{ github.workspace }}
 
   deploy:
     runs-on: ubuntu-latest
