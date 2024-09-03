@@ -20,3 +20,4 @@ runs:
     TITLE: ${{ inputs.title }}
     DESCRIPTION: ${{ inputs.description }}
     BASE_PATH: ${{ inputs.base_path }}
+    OWNER: ${{ github.repository_owner }}

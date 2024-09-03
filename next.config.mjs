@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const [, basePath = ""] = process.env.BASE_PATH.split("/");
+const owner = process.env.OWNER;
+const [, basePath = ""] = process.env.BASE_PATH.replace(owner, "");
 
 const nextConfig = {
   output: "export",
