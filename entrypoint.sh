@@ -2,5 +2,5 @@
 cd /app
 bun run build
 mv out artifact
-zip artifact.zip artifact
-cp artifact.zip /github/workspace
+tar czf artifact.tar artifact
+cp artifact.tar /github/workspace
