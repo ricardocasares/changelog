@@ -1,5 +1,6 @@
 #!/bin/sh -l
 cd /app
 bun run build
-cp -r ./out /github/workspace
-ls -la /github/workspace
+mv out artifact
+zip artifact.zip artifact
+cp artifact.zip /github/workspace
