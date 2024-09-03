@@ -23,13 +23,15 @@ runs:
         key: ${{ runner.os }}-next-${{ hashFiles('**/bun.lockb') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
         restore-keys: |
           ${{ runner.os }}-next-${{ hashFiles('**/bun.lockb') }}-
+    - run: ls -la
+      shell: bash
     - run: bun install
       shell: bash
     - run: bun run build
       shell: bash
       env:
         INPUT_TITLE: ${{ inputs.title }}
-        INPUT_DESCRIPTION: ${{ inputs.description }}
+        INPUT_DESCRIPTION: ${{ inputs.title }}
     - uses: actions/upload-pages-artifact@v3
       with:
         path: ./out
