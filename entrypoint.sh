@@ -1,5 +1,4 @@
 #!/bin/sh -l
-cd /app
 ls -la
 
 echo "INPUT_TITLE=$1" >> .env
