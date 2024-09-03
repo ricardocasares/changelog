@@ -1,0 +1,15 @@
+name: "changelog"
+description: "Blazing fast dev micro blogging"
+inputs:
+  title:
+    description: "Title of your changelog"
+    required: false
+    default: "Changelog"
+runs:
+  using: "composite"
+  steps:
+    - name: Set Greeting
+      run: echo "Hello $INPUT_TITLE" > hello.txt
+      shell: bash
+      env:
+        INPUT_TITLE: ${{ inputs.title }}
