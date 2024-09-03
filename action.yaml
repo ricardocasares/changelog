@@ -13,7 +13,7 @@ inputs:
     description: "Base URL path"
     required: false
     default: ${{ github.repository }}
-  owner:
+  repository_owner:
     description: "Repository owner"
     required: false
     default: ${{ github.repository_owner }}
