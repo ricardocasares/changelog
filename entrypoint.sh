@@ -1,8 +1,7 @@
 #!/bin/sh -l
 cd /app
-# title
-echo $1 >> .env
-# description
-echo $2 >> .env
-# build app
+
+echo "INPUT_TITLE=$1" >> .env
+echo "INPUT_DESCRIPTION=$2" >> .env
+
 bun run build

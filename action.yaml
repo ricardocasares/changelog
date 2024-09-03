@@ -13,5 +13,5 @@ runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    - ${{ inputs.title }}
-    - ${{ inputs.description }}
+    - "${{ inputs.title }}"
+    - "${{ inputs.description }}"
