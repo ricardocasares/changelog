@@ -2,5 +2,6 @@ FROM oven/bun:1 AS installer
 WORKDIR /app
 COPY . .
 RUN bun install --frozen-lockfile
+COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT ["bun", "run", "build"]
+ENTRYPOINT ["/entrypoint.sh"]
