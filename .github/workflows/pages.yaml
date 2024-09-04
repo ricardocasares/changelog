@@ -1,7 +1,6 @@
 on: push
 permissions:
   pages: write
-  issues: read
   contents: read
   id-token: write
 jobs:
