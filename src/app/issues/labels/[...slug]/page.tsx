@@ -15,7 +15,7 @@ export default async function IssuesByLabelPage(props: IssuesByLabelProps) {
   const issues = await gh.issues_by_label(label!.name);
 
   return (
-    <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 gap-2">
+    <div className="main">
       <div className="grow">
         <Issues issues={issues} />
       </div>

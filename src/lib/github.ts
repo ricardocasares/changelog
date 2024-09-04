@@ -32,11 +32,13 @@ function labelify(label: Label) {
 function issueify(issue: Issue) {
   const slug = slugify(issue.title);
   const link = `/issues/${issue.number}/${slug}`;
+  const labels = issue.labels.map(labelify);
 
   return {
     ...issue,
     slug,
     link,
+    labels,
   };
 }
 

@@ -1,5 +1,6 @@
 import * as gh from "@/lib/github";
 import { render } from "@/lib/markdown";
+import Hashtags from "@/ui/hashtags";
 
 type IssueProps = {
   id: string;
@@ -12,7 +13,8 @@ export default async function Issue(props: IssueProps) {
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-6">{issue.title}</h2>
-      <div dangerouslySetInnerHTML={{ __html }} className="prose" />
+      <div dangerouslySetInnerHTML={{ __html }} className="prose mb-4" />
+      <Hashtags labels={issue.labels} />
     </div>
   );
 }

@@ -7,7 +7,7 @@ import { Logo } from "@/lib/icons";
 import Theme from "@/ui/theme";
 import Providers from "@/providers";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ["latin"], weight: ["400", "600"] });
 
 export const metadata: Metadata = {
   title: cfg.TITLE,
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" suppressHydrationWarning>
       <head></head>
       <body className={inter.className}>
         <Providers>
@@ -41,7 +41,7 @@ export default function RootLayout({
             <footer className="py-10 flex items-center gap-1 text-sm text-neutral-content">
               Built with{" "}
               <Link href="/" className="flex gap-1 font-semibold items-center">
-                <Logo /> forkoff
+                <Logo /> ForkOff
               </Link>
             </footer>
           </div>

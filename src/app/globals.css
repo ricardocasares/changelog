@@ -7,13 +7,18 @@ body {
   @apply h-full min-h-full;
 }
 
-a {
-  @apply text-neutral-content hover:text-base-content transition-colors;
+a,
+.prose a {
+  @apply text-neutral-content hover:text-base-content transition-colors decoration-neutral-content hover:decoration-base-content underline-offset-2 decoration-solid;
 }
 
 h1 a,
 h2 a {
   @apply text-base-content hover:text-neutral-content transition-colors;
+}
+
+.main {
+  @apply flex flex-col md:flex-row space-y-10 md:space-y-0 gap-10;
 }
 
 [data-theme="dark"] .shiki,

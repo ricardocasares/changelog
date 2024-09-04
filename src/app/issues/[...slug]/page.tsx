@@ -12,7 +12,7 @@ export default async function IssuePage(props: IssueProps) {
   const [id] = props.params.slug;
 
   return (
-    <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 gap-2">
+    <div className="main">
       <div className="grow">
         <Issue id={id} />
       </div>
