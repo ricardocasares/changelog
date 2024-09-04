@@ -1,9 +1,9 @@
-import Link from "next/link";
-import * as gh from "@/lib/github";
-import { Tags } from "@/lib/icons";
+import Link from 'next/link'
+import * as gh from '@/lib/github'
+import {Tags} from '@/lib/icons'
 
 export default async function Labels() {
-  const labels = await gh.labels();
+  const labels = await gh.labels()
 
   return (
     <div>
@@ -19,5 +19,5 @@ export default async function Labels() {
         ))}
       </ul>
     </div>
-  );
+  )
 }

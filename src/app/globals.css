@@ -21,8 +21,8 @@ h2 a {
   @apply flex flex-col md:flex-row space-y-10 md:space-y-0 gap-10;
 }
 
-[data-theme="dark"] .shiki,
-[data-theme="dark"] .shiki span {
+[data-theme='dark'] .shiki,
+[data-theme='dark'] .shiki span {
   color: var(--shiki-dark) !important;
   background-color: var(--shiki-dark-bg) !important;
   /* Optional, if you also want font styles */

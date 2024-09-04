@@ -8,10 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - id: pages
+        uses: actions/configure-pages@v5
       - uses: ./
         with:
-          title: Changelog
-          description: Blazing fast micro blogging
+          title: ForkAround
+          description: And find out!
+          # do not modify these
+          host: ${{ steps.pages.outputs.host }}
+          origin: ${{ steps.pages.outputs.origin }}
+          base_url: ${{ steps.pages.outputs.base_url }}
+          base_path: ${{ steps.pages.outputs.base_path }}
       - uses: actions/upload-pages-artifact@v3
         with:
           name: github-pages

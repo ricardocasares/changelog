@@ -1,38 +1,48 @@
-name: "changelog"
-description: "Blazing fast dev micro blogging"
+name: 'changelog'
+description: 'Blazing fast dev micro blogging'
 inputs:
   title:
-    description: "Title of your site"
+    description: 'Title of your site'
     required: false
-    default: "Forkoff"
+    default: 'Forkoff'
   description:
-    description: "Description for your changelog"
+    description: 'Description for your changelog'
     required: false
-    default: "Blazing fast micro blogging"
-  base:
-    description: "Base URL path"
-    required: false
-    default: ${{ github.repository }}
-  owner:
-    description: "Repository owner"
-    required: false
-    default: ${{ github.repository_owner }}
+    default: 'Blazing fast micro blogging'
+  host:
+    description: 'Pages host, example: "forkaround.io"'
+    required: true
+  origin:
+    description: 'Pages origin, example: "https://forkaround.io"'
+    required: true
+  base_url:
+    description: 'Base URL, example: "https://forkaround.io" or "https://forkaround.io/blog"'
+    required: true
+  base_path:
+    description: 'Base path example: "/blog", ""'
+    required: true
   token:
-    description: "GitHub token"
+    description: 'GitHub token'
     required: false
     default: ${{ github.token }}
   api_url:
-    description: "GitHub URL"
+    description: 'GitHub URL'
     required: false
     default: ${{ github.api_url }}
+  repository:
+    description: 'GitHub URL'
+    required: false
+    default: ${{ github.repository }}
 runs:
-  using: "docker"
-  image: "Dockerfile"
+  using: 'docker'
+  image: 'Dockerfile'
   env:
     TITLE: ${{ inputs.title }}
     DESCRIPTION: ${{ inputs.description }}
-    BASE: ${{ inputs.base }}
-    OWNER: ${{ inputs.owner }}
+    HOST: ${{ inputs.host }}
+    ORIGIN: ${{ inputs.origin }}
+    BASE_URL: ${{ inputs.base_url }}
+    BASE_PATH: ${{ inputs.base_path }}
     GITHUB_URL: ${{ inputs.api_url }}
     GITHUB_TOKEN: ${{ inputs.token }}
-    GITHUB_REPOSITORY: ${{ inputs.base }}
+    GITHUB_REPOSITORY: ${{ inputs.repository }}

@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { Label } from "@/lib/github";
+import Link from 'next/link'
+import {Label} from '@/lib/github'
 
 type HashtagsProps = {
-  labels: Label[];
-};
+  labels: Label[]
+}
 
 export default function Hashtags(props: HashtagsProps) {
   return (
@@ -14,5 +14,5 @@ export default function Hashtags(props: HashtagsProps) {
         </li>
       ))}
     </ul>
-  );
+  )
 }

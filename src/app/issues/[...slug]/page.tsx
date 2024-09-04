@@ -1,15 +1,15 @@
-import Issue from "@/ui/issue";
-import Labels from "@/ui/labels";
-import * as gh from "@/lib/github";
+import Issue from '@/ui/issue'
+import Labels from '@/ui/labels'
+import * as gh from '@/lib/github'
 
 type IssueProps = {
   params: {
-    slug: string[];
-  };
-};
+    slug: string[]
+  }
+}
 
 export default async function IssuePage(props: IssueProps) {
-  const [id] = props.params.slug;
+  const [id] = props.params.slug
 
   return (
     <div className="main">
@@ -18,13 +18,13 @@ export default async function IssuePage(props: IssueProps) {
       </div>
       <Labels />
     </div>
-  );
+  )
 }
 
 export async function generateStaticParams() {
-  const issues = await gh.issues();
+  const issues = await gh.issues()
 
-  return issues.map(({ number, slug }) => ({
-    slug: [number.toString(), slug],
-  }));
+  return issues.map(({number, slug}) => ({
+    slug: [number.toString(), slug]
+  }))
 }

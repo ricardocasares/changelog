@@ -1,10 +1,10 @@
-import Link from "next/link";
-import type { Issue } from "@/lib/github";
-import Hashtags from "./hashtags";
+import Link from 'next/link'
+import type {Issue} from '@/lib/github'
+import Hashtags from './hashtags'
 
 type IssuesProps = {
-  issues: Issue[];
-};
+  issues: Issue[]
+}
 
 export default function Issues(props: IssuesProps) {
   return (
@@ -19,5 +19,5 @@ export default function Issues(props: IssuesProps) {
         </div>
       ))}
     </div>
-  );
+  )
 }
