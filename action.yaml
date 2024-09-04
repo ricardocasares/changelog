@@ -17,6 +17,14 @@ inputs:
     description: "Repository owner"
     required: false
     default: ${{ github.repository_owner }}
+  token:
+    description: "GitHub token"
+    required: false
+    default: ${{ github.token }}
+  api_url:
+    description: "GitHub URL"
+    required: false
+    default: ${{ github.api_url }}
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -25,3 +33,6 @@ runs:
     DESCRIPTION: ${{ inputs.description }}
     BASE: ${{ inputs.base }}
     OWNER: ${{ inputs.owner }}
+    GITHUB_URL: ${{ inputs.api_url }}
+    GITHUB_TOKEN: ${{ inputs.token }}
+    GITHUB_REPOSITORY: ${{ inputs.base }}
