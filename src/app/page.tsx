@@ -1,10 +1,16 @@
-import { description, title } from "@/config";
+import Labels from "@/ui/labels";
+import Issues from "@/ui/issues";
+import * as gh from "@/lib/github";
 
-export default function Home() {
+export default async function Home() {
+  const issues = await gh.issues();
+
   return (
-    <div className="container mx-auto my-10">
-      <h1 className="text-3xl font-semibold">{title}</h1>
-      <h2 className="text-xl leading-tight text-gray-500">{description}</h2>
+    <div className="flex flex-col md:flex-row space-y-10 md:space-y-0 gap-2">
+      <div className="grow">
+        <Issues issues={issues} />
+      </div>
+      <Labels />
     </div>
   );
 }

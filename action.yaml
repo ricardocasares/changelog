@@ -2,18 +2,18 @@ name: "changelog"
 description: "Blazing fast dev micro blogging"
 inputs:
   title:
-    description: "Title of your changelog"
+    description: "Title of your site"
     required: false
-    default: "Changelog"
+    default: "Forkoff"
   description:
     description: "Description for your changelog"
     required: false
     default: "Blazing fast micro blogging"
-  base_path:
+  base:
     description: "Base URL path"
     required: false
     default: ${{ github.repository }}
-  repository_owner:
+  owner:
     description: "Repository owner"
     required: false
     default: ${{ github.repository_owner }}
@@ -23,5 +23,5 @@ runs:
   env:
     TITLE: ${{ inputs.title }}
     DESCRIPTION: ${{ inputs.description }}
-    BASE_PATH: ${{ inputs.base_path }}
-    OWNER: ${{ inputs.repository_owner }}
+    BASE: ${{ inputs.base }}
+    OWNER: ${{ inputs.owner }}

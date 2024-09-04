@@ -1,12 +1,31 @@
+import daisy from "daisyui";
+import typos from "@tailwindcss/typography";
 import type { Config } from "tailwindcss";
+
+const themes = {
+  light: {
+    "base-100": "#FFF",
+    "base-content": "#000",
+    "neutral-content": "#999",
+  },
+  dark: {
+    "base-100": "#000",
+    "base-content": "#FFF",
+    "neutral-content": "#999",
+  },
+};
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/ui/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  plugins: [],
+  plugins: [typos, daisy],
+  darkMode: ["selector", '[data-theme="dark"]'],
+  daisyui: {
+    themes: [themes],
+  },
 };
 
 export default config;
