@@ -12,7 +12,7 @@ jobs:
         uses: actions/configure-pages@v5
       - uses: ./
         with:
-          title: ForkAround
+          title: forkaround
           description: And find out!
           # do not modify these
           host: ${{ steps.pages.outputs.host }}
