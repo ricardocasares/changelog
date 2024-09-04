@@ -1,10 +1,9 @@
 on: push
-
 permissions:
   pages: write
+  issues: read
   contents: read
   id-token: write
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +17,6 @@ jobs:
         with:
           name: github-pages
           path: ${{ github.workspace }}/out/
-
   deploy:
     runs-on: ubuntu-latest
     environment:
