@@ -14,7 +14,7 @@ export function Logo(props: SVGProps<SVGSVGElement>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         strokeWidth="2">
-        <path d="M12 21V8a4 4 0 1 0-4 4h13"></path>
+        <path d="M12 21v-6m0-6V8a4 4 0 1 0-4 4h13"></path>
         <path d="m17 16l4-4l-4-4"></path>
       </g>
     </svg>
